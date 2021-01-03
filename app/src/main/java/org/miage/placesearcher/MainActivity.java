@@ -118,4 +118,10 @@ public class MainActivity extends AppCompatActivity {
         switchToMapIntent.putExtra("currentSearch", mSearchEditText.getText().toString());
         startActivity(switchToMapIntent);
     }
+    @OnClick(R.id.activity_main_stat_button)
+    public void clickedOnSwitchToSTAT() {
+        Intent switchToMapIntent = new Intent(this, StatActivity.class);
+        startActivity(switchToMapIntent);
+    }
+
 }

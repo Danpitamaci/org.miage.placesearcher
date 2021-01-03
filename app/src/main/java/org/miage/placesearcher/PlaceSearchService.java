@@ -117,6 +117,7 @@ public class PlaceSearchService {
         }, REFRESH_DELAY, TimeUnit.MILLISECONDS);
     }
 
+
     private void searchPlacesFromDB(String search) {
         // Get places matching the search from DB
         List<PlaceAddress> matchingPlacesFromDB = new Select().
