@@ -1,7 +1,6 @@
 package org.miage.placesearcher.ui.ui.home;
 
 import android.graphics.Color;
-import android.graphics.Typeface;
 import android.os.Bundle;
 import android.text.SpannableString;
 import android.text.style.ForegroundColorSpan;
@@ -53,13 +52,13 @@ public class HomeFragment extends SimpleFragment {
         l.setOrientation(Legend.LegendOrientation.VERTICAL);
         l.setDrawInside(false);
 
-        chart.setData(generatePieData());
+        chart.setData(generateCountriesData());
 
         return v;
     }
 
     private SpannableString generateCenterText() {
-        SpannableString s = new SpannableString("Revenues\nQuarters 2015");
+        SpannableString s = new SpannableString("Nantes\nCountries addresses");
         s.setSpan(new RelativeSizeSpan(2f), 0, 8, 0);
         s.setSpan(new ForegroundColorSpan(Color.GRAY), 8, s.length(), 0);
         return s;

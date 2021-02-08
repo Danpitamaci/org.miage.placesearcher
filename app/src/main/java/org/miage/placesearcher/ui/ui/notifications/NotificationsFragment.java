@@ -10,7 +10,6 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 
 import com.github.mikephil.charting.charts.LineChart;
-import com.github.mikephil.charting.charts.ScatterChart;
 import com.github.mikephil.charting.components.Legend;
 import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.components.YAxis;
@@ -32,7 +31,7 @@ public class NotificationsFragment extends SimpleFragment {
 
         chart.setDrawGridBackground(false);
 
-        chart.setData(generateLineData());
+        chart.setData(generateUsageEvolutionData());
         chart.animateX(3000);
 
         Typeface tf = Typeface.createFromAsset(context.getAssets(), "OpenSans-Light.ttf");
