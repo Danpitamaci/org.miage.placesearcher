@@ -1,38 +1,53 @@
 
 package org.miage.placesearcher.ui.ui.notifications;
 
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
 
-import com.github.mikephil.charting.charts.PieChart;
+import com.github.mikephil.charting.charts.LineChart;
+import com.github.mikephil.charting.charts.ScatterChart;
+import com.github.mikephil.charting.components.Legend;
+import com.github.mikephil.charting.components.XAxis;
+import com.github.mikephil.charting.components.YAxis;
 
 import org.miage.placesearcher.R;
+import org.miage.placesearcher.ui.ui.SimpleFragment;
 
-public class NotificationsFragment extends Fragment {
+public class NotificationsFragment extends SimpleFragment {
 
-    private NotificationsViewModel notificationsViewModel;
-    private PieChart chart;
+    private LineChart chart;
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        notificationsViewModel =
-                new ViewModelProvider(this).get(NotificationsViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_notifications, container, false);
-        final TextView textView = root.findViewById(R.id.text_notifications);
-        notificationsViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
-        return root;
+        View v = inflater.inflate(R.layout.fragment_notifications, container, false);
+
+        chart = v.findViewById(R.id.scatterChart);
+
+
+        chart.getDescription().setEnabled(false);
+
+        chart.setDrawGridBackground(false);
+
+        chart.setData(generateLineData());
+        chart.animateX(3000);
+
+        Typeface tf = Typeface.createFromAsset(context.getAssets(), "OpenSans-Light.ttf");
+
+        Legend l = chart.getLegend();
+        l.setTypeface(tf);
+
+        YAxis leftAxis = chart.getAxisLeft();
+        leftAxis.setTypeface(tf);
+
+        chart.getAxisRight().setEnabled(false);
+
+        XAxis xAxis = chart.getXAxis();
+        xAxis.setEnabled(false);
+
+        return v;
     }
 }
