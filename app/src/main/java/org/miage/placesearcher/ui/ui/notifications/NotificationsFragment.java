@@ -1,3 +1,4 @@
+
 package org.miage.placesearcher.ui.ui.notifications;
 
 import android.os.Bundle;
