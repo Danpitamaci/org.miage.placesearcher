@@ -57,7 +57,7 @@ public abstract class SimpleFragment extends Fragment {
 
         ArrayList<BarEntry> entries = new ArrayList<>();
 
-        int [] nbResearch = {1000,700,900,400,2000,600};
+        int [] nbResearch = {2000,700,900,400,1000,600};
             int count = 6;
             for (int j = 0; j < count; j++) {
                 entries.add(new BarEntry(j, nbResearch[j]));
