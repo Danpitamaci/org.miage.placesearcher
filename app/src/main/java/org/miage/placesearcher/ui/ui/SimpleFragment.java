@@ -57,19 +57,14 @@ public abstract class SimpleFragment extends Fragment {
 
         ArrayList<BarEntry> entries = new ArrayList<>();
 
-        int [] nbResearch = {1000,700,900,400,2000};
-        String[] address = new String[] { "Commerce", "Gare Sud", "Atlantis", "Orvault GV", "Vincent Gâche"};
-        for(int i = 0; i < address.length; i++) {
-            int count = 5;
+        int [] nbResearch = {1000,700,900,400,2000,600};
+            int count = 6;
             for (int j = 0; j < count; j++) {
                 entries.add(new BarEntry(j, nbResearch[j]));
             }
-
-            BarDataSet ds = new BarDataSet(entries, address[i]);
-            ds.setColors(ColorTemplate.COLORFUL_COLORS);
-            sets.add(ds);
-
-        }
+        BarDataSet ds = new BarDataSet(entries, "adresses");
+        ds.setColors(ColorTemplate.COLORFUL_COLORS);
+        sets.add(ds);
         BarData d = new BarData(sets);
         d.setValueTypeface(tf);
         return d;
@@ -120,8 +115,8 @@ public abstract class SimpleFragment extends Fragment {
         ds1.setDrawCircles(false);
         ds2.setDrawCircles(false);
 
-        ds1.setColor(ColorTemplate.COLORFUL_COLORS[0]);
-        ds2.setColor(ColorTemplate.COLORFUL_COLORS[1]);
+        ds1.setColor(ColorTemplate.MATERIAL_COLORS[0]);
+        ds2.setColor(ColorTemplate.MATERIAL_COLORS[1]);
 
         // load DataSets from files in assets folder
         sets.add(ds1);

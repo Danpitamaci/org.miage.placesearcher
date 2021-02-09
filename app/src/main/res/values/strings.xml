@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">PlaceSearcher</string>
     <string name="title_activity_Stat_activity">MainActivity</string>
-    <string name="title_home">Camembert</string>
-    <string name="title_dashboard">Histogramme</string>
-    <string name="title_notifications">Multi-lignes</string>
+    <string name="title_home">Communes de Nantes</string>
+    <string name="title_dashboard">Top 5 adresses</string>
+    <string name="title_notifications">Evolution des usages</string>
 </resources>
